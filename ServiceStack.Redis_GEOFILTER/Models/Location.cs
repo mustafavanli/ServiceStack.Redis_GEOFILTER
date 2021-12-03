@@ -1,4 +1,6 @@
-﻿namespace ServiceStack.Redis_GEOFILTER.Models
+﻿using System.Text.Json.Serialization;
+
+namespace ServiceStack.Redis_GEOFILTER.Models
 {
     public class Location
     {
