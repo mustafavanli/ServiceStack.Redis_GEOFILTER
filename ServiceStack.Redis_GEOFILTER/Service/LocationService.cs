@@ -15,11 +15,11 @@ namespace ServiceStack.Redis_GEOFILTER.Service
         {
             using (var redis = _client.GetClient())
             {
-                var results = new RedisGeo();
-                results.Member = location.Name;
-                results.Latitude = location.Latitude;
-                results.Longitude = location.Longitude;
-                redis.AddGeoMembers(location.Country.ToUpper(), results);
+                var geo = new RedisGeo();
+                geo.Member = location.Name;
+                geo.Latitude = location.Latitude;
+                geo.Longitude = location.Longitude;
+                redis.AddGeoMembers(location.Country.ToUpper(), geo);
             }
         }
         public object Any(FindGeo request)
@@ -32,7 +32,6 @@ namespace ServiceStack.Redis_GEOFILTER.Service
                 RedisGeoUnit.Kilometers);
             return results;
         }
-
 
     }
 }
