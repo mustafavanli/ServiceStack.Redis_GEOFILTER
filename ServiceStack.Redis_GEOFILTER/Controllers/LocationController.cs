@@ -25,7 +25,7 @@ namespace ServiceStack.Redis_GEOFILTER.Controllers
         [HttpPost("FindGeo")]
         public IActionResult FindGeo(FindGeo findGeo)
         {
-            // Country : "TR","EN","FR" vs. Key in Find geo
+            // Country : "TR","EN","FR" key in find geo
             return Ok(locationService.Any(findGeo));
         }
     }
